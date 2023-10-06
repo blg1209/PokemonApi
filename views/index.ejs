@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ("partials/header.ejs") %>
+
+</head>
+<body>
+
+
+    <div class="container">
+      <main>
+        <div class="py-5 text-center">
+          <img src="images/logo.svg" alt="pokemon logo" class="d-block mx-auto mb-4" width=100vh>    
+          <h2>Pokemon Search</h2>
+          <p class="lead">Welcome to the Pokemon Repository! This first iteration will produce a random pokemon.</p>
+        </div>
+    
+        <div class="row g-5 text-center">
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">PokeRandom</h4>
+              <div class="row g-3">
+
+                <div class="col-sm-6 imgArea">
+                  
+                  <% if(locals.content){ %>
+                    <% let localName = locals.content.name %>
+                    <% let localPrice = locals.content.cardmarket.prices.averageSellPrice %>
+                    <% let localImage =  locals.content.images.small %>
+                    <% let localSet = locals.content.set.name %>
+                    <% let localSeries = locals.content.set.series %>
+              
+                  <%= localName %>
+                  <%= localPrice%>
+                  <%= localSet %>
+                  <%= localSeries %>
+                  <img src="<%= localImage %>" alt="pokemon image" class = "img-rounded">
+                  <% } %>
+                </div>
+
+                <hr class="my-4">
+              <input id="get" type="submit" value="Random" formaction="/get-random" 
+                     class="w-50 btn btn-primary btn-lg">
+            </form>
+          </div>
+        </div>
+      </main>
+    
+      <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+        <p class="mb-1">© 2017–2023 Company Name</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+</body>
+</html>
