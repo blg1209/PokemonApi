@@ -15,30 +15,39 @@
     <p class="lead">Welcome to the Pokemon Repository! This first iteration will produce a random pokemon.</p>
   </div>
 
-  <div class="row g-5">
-    <div class="col-md-7 col-lg-8">
-      <h4 class="mb-3">PokeRandom</h4>
-      <form class="needs-validation" novalidate="">
-        <div class="row g-3">
-          <div class="col-sm-6 imgArea">
-            <% if(locals.content){ %>
-              <% let localName = locals.content.name %>
-              <% let localPrice = locals.content.cardmarket.prices.averageSellPrice %>
-              <% let localImage =  locals.content.images.small %>
-              <% let localSet = locals.content.set.name %>
-              <% let localSeries = locals.content.set.series %>     
-              <%= localName %>
-              <%= localPrice%>
-              <%= localSet %>
-              <%= localSeries %>
-            <img src="<%= localImage %>" alt="pokemon image" class = "img-rounded">
-            <% } %>
-          </div>
-
-        <hr class="my-4">
-        <input id="get" type="submit" value="Random" formaction="/get-random" 
-        class="w-50 btn btn-primary btn-lg">      </form>
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-4">
+        <% if(locals.content){ %>
+          <% let localName = locals.content.name %>
+          <% let localPrice = locals.content.cardmarket.prices.averageSellPrice %>
+          <% let localSet = locals.content.set.name %>
+          <% let localSeries = locals.content.set.series %>     
+          <p> <strong>Pokemon Name: </strong> <%= localName %> </p>
+          <p> <Strong>Average Price: $</Strong> <%= localPrice%> </p>
+          <p> <strong> Set: </strong><%= localSet %> </p>
+          <p> <strong> Series: </strong> <%= localSeries %> </p>
+        <% } %>
+      </div>
+      
+      <div class="col-lg-4 imgArea">
+        <% if(locals.content){ %>
+          <% let localImage =  locals.content.images.small %>
+          <img src="<%= localImage %>" alt="pokemon image" class = "img-rounded">
+          <% } %>
+      </div>
     </div>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4">
+          <form class="needs-validation text-center mt-3" novalidate="">
+            <input id="get" type="submit" value="Random" formaction="/get-random" 
+            class="w-50 btn btn-primary btn-lg">
+          </form>
+        </div>   
+      </div>
+    </div>
+    
   </div>
 </main>
 
