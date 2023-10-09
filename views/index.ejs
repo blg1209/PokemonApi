@@ -13,6 +13,17 @@
     <img src="images/logo.svg" alt="pokemon logo" class="d-block mx-auto mb-4" width=100vh>    
     <h2>Pokemon Search</h2>
     <p class="lead">Welcome to the Pokemon Repository! This first iteration will produce a random pokemon.</p>
+   
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4">
+          <form class="needs-validation text-center" novalidate="">
+            <input id="get" type="submit" value="Random" formaction="/get-random" 
+            class="w-50 btn btn-primary btn-lg">
+          </form>
+        </div>   
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -35,16 +46,6 @@
           <% let localImage =  locals.content.images.small %>
           <img src="<%= localImage %>" alt="pokemon image" class = "img-rounded">
           <% } %>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="col-lg-4">
-          <form class="needs-validation text-center mt-3" novalidate="">
-            <input id="get" type="submit" value="Random" formaction="/get-random" 
-            class="w-50 btn btn-primary btn-lg">
-          </form>
-        </div>   
       </div>
     </div>
     
